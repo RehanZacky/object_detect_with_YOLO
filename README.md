@@ -10,24 +10,24 @@ After installing run the code
 # Code
 `python
 
-# 2. Import library
-from ultralytics import YOLO
-import cv2
-import matplotlib.pyplot as plt
-from google.colab import files
+    # 2. Import library
+    from ultralytics import YOLO
+    import cv2
+    import matplotlib.pyplot as plt
+    from google.colab import files
 
-# 3. Unggah gambar
-print("Silakan unggah gambar yang akan digunakan:")
-uploaded = files.upload()
+    # 3. Unggah gambar
+    print("Silakan unggah gambar yang akan digunakan:")
+    uploaded = files.upload()
 
-# Ambil nama file gambar yang diunggah
-image_path = list(uploaded.keys())[0]
+    # Ambil nama file gambar yang diunggah
+    image_path = list(uploaded.keys())[0]
 
-# 4. Load model YOLO
-model = YOLO("yolov8n.pt")  # YOLOv5s pretrained model
+    # 4. Load model YOLO
+    model = YOLO("yolov8n.pt")  # YOLOv5s pretrained model
 
-# 5. Fungsi untuk deteksi objek
-def detect_objects(image_path):
+    # 5. Fungsi untuk deteksi objek
+    def detect_objects(image_path):
     # Baca gambar
     img = cv2.imread(image_path)
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
@@ -49,7 +49,7 @@ def detect_objects(image_path):
         coordinates = result.xyxy.cpu().numpy()  # Koordinat bounding box
         print(f"Label: {label}, Confidence: {confidence:.2f}, Coordinates: {coordinates}")
 
-# 6. Jalankan deteksi objek
-detect_objects(image_path)
+    # 6. Jalankan deteksi objek
+    detect_objects(image_path)
 
 `
