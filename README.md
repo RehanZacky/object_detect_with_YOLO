@@ -8,7 +8,7 @@ you can use google colabs to run the code
 `
 After installing run the code
 # Code
-`python
+```python
 
     # 2. Import library
     from ultralytics import YOLO
@@ -52,4 +52,4 @@ After installing run the code
     # 6. Jalankan deteksi objek
     detect_objects(image_path)
 
-`
+```
